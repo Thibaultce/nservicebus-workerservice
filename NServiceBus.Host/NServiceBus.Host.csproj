@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>dotnet-NServiceBus.Host-3BF4C983-56E9-4825-9A59-43E6E94A0C1D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0-preview6.19304.6" />
+    <PackageReference Include="NServiceBus" Version="7.1.10" />
+    <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NServiceBus.Billing\NServiceBus.Billing.csproj" />
+    <ProjectReference Include="..\NServiceBus.Common.Conventions\NServiceBus.Common.Conventions.csproj" />
+    <ProjectReference Include="..\NServiceBus.Sales\NServiceBus.Sales.csproj" />
+    <ProjectReference Include="..\NServiceBus.Shipping\NServiceBus.Shipping.csproj" />
+  </ItemGroup>
+</Project>

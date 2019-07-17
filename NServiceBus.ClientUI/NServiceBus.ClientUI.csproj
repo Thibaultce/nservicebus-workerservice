@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NServiceBus" Version="7.1.10" />
+    <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NServiceBus.Common.Conventions\NServiceBus.Common.Conventions.csproj" />
+    <ProjectReference Include="..\NServiceBus.Messages\NServiceBus.Messages.csproj" />
+  </ItemGroup>
+
+</Project>

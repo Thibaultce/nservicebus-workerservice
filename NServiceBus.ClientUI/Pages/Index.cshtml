@@ -1,0 +1,58 @@
+﻿@page
+@model IndexModel
+@{
+    ViewBag.Title = "Place an order";
+}
+
+<div class="container">
+    @if (!string.IsNullOrWhiteSpace(Model.OrderId))
+    {
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card my-4">
+                <form method="POST">
+                    <div class="card-body">
+                        <h2 class="card-title">OrderId <code>@Model.OrderId</code> sent</h2>
+                        <p>Your order has been placed successfully. You have sent <b>@Model.MessagesSent total messages</b>.</p>
+                        <p>As a result of the button click:</p>
+                        <ul>
+                            <li>The <b>ClientUI</b> website sent a <code>PlaceOrder</code> command to the <b>Sales</b> service.</li>
+                            <li>The <b>Sales</b> service will publish an <code>OrderPlaced</code> event.</li>
+                            <li>The <b>Billing</b> service, which subscribes to <code>OrderPlaced</code>, will receive and process <code>OrderPlaced</code>.</li>
+                        </ul>
+                        <p>Go look in the <b>Sales</b> and <b>Billing</b> console windows to see the <code>PlaceOrder</code> command and <code>OrderPlaced</code> event getting processed.</p>
+                        <input type="submit" class="btn btn-lg btn-success" onclick="sentMessage()" value="Place another order &raquo;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    }
+
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card my-4">
+                <div class="card-body">
+                    <form method="POST">
+                        <h1 class="card-title">Place an order</h1>
+                        <p class="card-text">Click the button to place an order.</p>
+                        <input type="submit" class="btn btn-lg btn-success" onclick="sentMessage()" value="Place order &raquo;" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card my-4">
+                <div class="card-body">
+                    <p>When you click the button:</p>
+                    <ol>
+                        <li>The <b>ClientUI</b> website will send a <code>PlaceOrder</code> command to the <b>Sales</b> service.</li>
+                        <li>The <b>Sales</b> service will publish an <code>OrderPlaced</code> event.</li>
+                        <li>The <b>Billing</b> service, which subscribes to <code>OrderPlaced</code>, will receive and process <code>OrderPlaced</code>.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
